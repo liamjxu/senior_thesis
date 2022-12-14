@@ -123,6 +123,8 @@
     }
 \newcommand\msthesis{\othermasters{Master of Science}{M.S.}
     }
+\newcommand\bsthesis{\othermasters{Bachelor of Science}{B.S.}
+    }
 \def\degreeyear#1{\def\@degreeyear{#1}}
 \def\department#1{\def\@dept{#1}}
 \def\college#1{\def\@college{#1}}
@@ -152,7 +154,8 @@
 \if@thesisdraft\nocopyrightpage\fi
 \msthesis
 \department{Electrical and Computer Engineering}
-\college{Graduate College}
+% \college{Graduate College}
+\college{Undergraduate College}
 \def\@schools{}
 \def\@degreeyear{\number\year}
 \newlength{\degree@dept@max}   %% v 3.07
