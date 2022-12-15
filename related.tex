@@ -1,7 +1,21 @@
-\chapter{Related Work}
-Talk about some of the related tasks here.
-\section{Framing}
-The computational approaches of framing, Diyi's work, some 
-\section{Contrastive Learning}
+\chapter{Related Works}
 
-\section{Switch (Steerability)}
+There is a large body of work focusing on computational approaches of framing, contrastive learning, and the steerability of deep learning models.
+
+\section{Political Viewpoint Indentification}
+A line of work has been focused on automatic news framing analysis such as Political Viewpoint Identification (PVI) \cite{PVI-survey,li-goldwasser-2021-using,kim-johnson-2022-close,matero-etal-2021-melt-message,li-caragea-2021-multi,yu2008classify,hoyland-etal-2014-predicting,biessmann2016pvi,duthie2016mining,baly-etal-2019-multi,li2017pvi-lstm,rao2016pvi-lstm,gangula-etal-2019-detecting,kummervold-etal-2021-operationalizing,baly-etal-2020-detect,luo-etal-2020-detecting}. The task of PVI is to infer the political stance of the writer news agency from the news article content under a classification setting. Earlier work with traditional feature engineering techniques utilizes features such as tf-idf \cite{yu2008classify}, bag-of-words \cite{yu2008classify,hoyland-etal-2014-predicting,biessmann2016pvi}, and part-of-speech tags \cite{hoyland-etal-2014-predicting,duthie2016mining,baly-etal-2019-multi}.
+
+More recent work has put more effort to leverage the success of deep learning language models and techniques, with a variety of backbones ranging from LSTM and its variations \cite{li2017pvi-lstm,rao2016pvi-lstm,gangula-etal-2019-detecting} to Transformer-based models \cite{kummervold-etal-2021-operationalizing,baly-etal-2020-detect,luo-etal-2020-detecting}. This line of work relies more on word embedding and attention to capture the semantics behind news article contents.
+
+
+\section{Framing Mechanism}
+Another relevant domain is the analysis of the mechanism of framing. Earlier efforts have explored the task of framing language identification \cite{hamborg2020media,drakulich2015explicit,sap2019social,baumer-etal-2015-testing}. This task mainly aims to conduct word-level binary classification for framing languages. However, this effort is subject to the elusive nature of the framing language and has difficulty in obtaining high-quality annotation.
+
+Another recent line of work focuses more on understanding the framing strategies used \cite{field-etal-2018-framing,ziems-yang-2021-protect-serve} and using the framing strategies for generation, with specific targets such as positive reframing \cite{ziems-etal-2022-inducing} and controlled reframing \cite{chen-etal-2021-controlled-neural}. 
+
+Correspondingly, there have emerged open tools \cite{bhatia-etal-2021-openframing} to facilitate framing analysis for non-experts in computer science.
+
+\section{Steerability of Generative Models}
+Our method \texttt{SwitchLM} navigates the generative language models via learning a  projection matrix in the word embedding space. This technique has been previously applied to visual edition \cite{jahanian2019steerability,denton2019facial,shen2019facial,goetschalckx2019visual} to learn editing operations as linear trajectories in the latent space of Generative Adversarial Networks. 
+
+Previous applications include image dimension editing \cite{jahanian2019steerability} where the output image can be parallelly or circularly shifted, facial feature finetuning and augmenting \cite{denton2019facial,shen2019facial} where the facial features can be finetuned or perturbed, and cognitive property transformation \cite{goetschalckx2019visual} where dimensions such as memorability, aesthetics, and emotional valence are altered.
