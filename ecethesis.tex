@@ -1,4 +1,4 @@
-\documentclass[draftthesis,tocnosub,noragright,centerchapter,12pt]{uiucecethesis09}
+\documentclass[tocnosub,noragright,mixcasechap,centerchapter,12pt]{uiucecethesis09}
 
 % Use draftthesis for notes and date markings on every page.  Useful when you
 %   have multiple copies floating around.
@@ -20,6 +20,11 @@
 \usepackage{lscape}  % Useful for wide tables or figures.
 \usepackage[justification=raggedright]{caption}	% makes captions ragged right - thanks to Bryce Lobdell
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,      
+    urlcolor=cyan
+}
 
 % Uncomment the appropriate one of the following four lines:
 \bsthesis
@@ -96,20 +101,20 @@ To my parents, for their love and support.
 %
 % The List of Tables is not strictly necessary. Omitting the List of Tables will
 % simplify the thesis check and reduce the number of corrections.
-\listoftables
+% \listoftables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LIST OF FIGURES
 %
 % The List of Figures is not strictly necessary. Omitting the List of Figures will
 % simplify the thesis check and reduce the number of corrections.
-\listoffigures
+% \listoffigures
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LIST OF ABBREVIATIONS
 %
 % The List of Abbreviations is not strictly necessary.
-\chapter{LIST OF ABBREVIATIONS}
+% \chapter{LIST OF ABBREVIATIONS}
 
 %\begin{symbollist*}
 %\item[EPIC] Explicitly Parallel Instruction Computing
@@ -131,9 +136,13 @@ To my parents, for their love and support.
 % INSERT REAL CONTENT HERE
 %
 
-%\include{intro}	% for INTRODUCTION in "intro.tex"
-%\include{exper}
-%\include{concl}
+\include{intro}
+\include{related}
+\include{method}
+\include{exp}
+\include{analysis}
+\include{demo}
+\include{conclusion}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
