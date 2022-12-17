@@ -21,25 +21,25 @@ We provide background information of \texttt{ground.news} in \refsec{ground-news
         \item specific celebrities, such as ``tim-cook'' or ``liz-truss'';
         \item news sources, such as npr or new-york-times.
     \end{enumerate}
-    \item \textit{Story} is the middle level, which is an event that got coverage from different sources. \Eg, ``elon-musk-and-twitter-discussed-price-cut-to-44-billion-takeover-in-recent-weeks'' contains news articles covering the recent event that concerns the recently acquisition by Elon Musk.
+    \item \textit{Story} is the middle level, an event that got coverage from different sources - \eg, ``elon-musk-and-twitter-discussed-price-cut-to-44-billion-takeover-in-recent-weeks'' contains news articles covering the recent event that concerns the recently acquisition by Elon Musk.
     \item \textit{Article} is the lowest level, which contains the metadata of an article.
 \end{enumerate}
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.95\textwidth]{img/ground_news.png}
-    \caption{A Screeshot of \texttt{ground.news} (https://ground.news). The top figure displays a non-exhaustive list of the topics covered. The left bottom figure displays a list of \textit{stories} under the topic \textit{Politics}. The right bottom figure displays a list of news \textit{articles} from different news agencies for the \textit{story} ``January 6 committee ... Reports'', where metadata is provided.}
+    \caption{A screeshot of \texttt{ground.news} (https://ground.news). The top figure displays a non-exhaustive list of the topics covered. The left bottom figure displays a list of \textit{stories} under the topic \textit{Politics}. The right bottom figure displays a list of news \textit{articles} from different news agencies for the \textit{story} ``January 6 Committee ... Reports,'' where metadata is provided.}
     \label{fig:ground-news}
 \end{figure}
 
 \subsection{Article Metadata}
 \label{article-metadata}
-To collect the news data, we need to first obtain the article metadata. We create a web scrapper\footnote{\url{https://github.com/liamjxu/ground\_news\_webscraper}} to collect article metadata from \texttt{ground.news}. The web scraper is based on the HTML parsing toolkit \texttt{BeautifulSoup} and the frontend testing toolkit \texttt{Selenium}. The web scraper starts with the root level of the topic list\footnote{\url{https://ground.news/my/discover}}. By mimicking the mouse-clicking events with \texttt{Selenium}, the sub-page of each topic is displayed. The web scrapper further parses the related section of the current topic web page to obtain more topics. This process can be modeled as a multi-source Breadth-First-Search process.
+To collect the news data, we need to first obtain the article metadata. We create a web scraper\footnote{\url{https://github.com/liamjxu/ground\_news\_webscraper}} to collect article metadata from \texttt{ground.news}. The web scraper is based on the HTML parsing toolkit \texttt{BeautifulSoup} and the frontend testing toolkit \texttt{Selenium}. The web scraper starts with the root level of the topic list\footnote{\url{https://ground.news/my/discover}}. By mimicking the mouse-clicking events with \texttt{Selenium}, the sub-page of each topic is displayed. The web scraper further parses the related section of the current topic web page to obtain more topics. This process can be modeled as a multi-source Breadth-First-Search process.
 
 Then the story pages on each topic page are collected, which are then used to find metadata for each specific article. 
 Among the metadata provided by \texttt{ground.news}, three kinds of metadata serve our purposes most substantially:
 \begin{enumerate}
-    \item \textit{bias} is the political stance category of the current news agency labeled by \texttt{ground.news} (one of ``Left'', ``Lean Left'', ``Center'', ``Lean Right'', ``Right'', ``Unknown'')
-    \item \textit{factuality} is the news reliability category of the current news agency labeled by \texttt{ground.news} (one of ``High Factuality'', ``Low Factuality'', ``Mixed Factuality'', ``Unknown'')
+    \item \textit{bias} is the political stance category of the current news agency labeled by \texttt{ground.news} (one of ``Left,'' ``Lean Left,'' ``Center,'' ``Lean Right,'' ``Right,'' ``Unknown'')
+    \item \textit{factuality} is the news reliability category of the current news agency labeled by \texttt{ground.news} (one of ``High Factuality,'' ``Low Factuality,'' ``Mixed Factuality,'' ``Unknown'')
     \item \textit{URL} is the link to the original news web page.
 \end{enumerate}
 
@@ -67,6 +67,7 @@ We utilized the \texttt{news-please} toolkit\footnote{\url{https://github.com/fh
 When the data collection is finished, the final dataset has the following statistics shown in \reftab{tab:dataset-stat}. The dataset is open-sourced \footnote{\url{https://github.com/blender-nlp/MultiAgencyNews}}.
 \begin{table}[h]
     \centering
+    \caption{The Statistics of the Collected Dataset}
     \resizebox{0.5\columnwidth}{!}{%
     \begin{tabular}{@{}cc@{}}
     \toprule
@@ -78,7 +79,6 @@ When the data collection is finished, the final dataset has the following statis
     words in the unique articles & 54,631,854      \\ \bottomrule
     \end{tabular}%
     }
-    \caption{The Statistics of the Collected Dataset}
     \label{tab:dataset-stat}
 \end{table}
 
